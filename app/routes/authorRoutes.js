@@ -1,36 +1,23 @@
 const express = require('express');
 const router = express.Router();
+const {
+    getAllAuthors,
+    getAuthorById,
+    createAuthor,
+    updateAuthor,
+    deleteAuthor
+} = require('../controller/authorController');
 
-router.get('/', (req, res) => {
-    res
-        .status(200)
-        .json({ success: true, message: `${req.method} - Request received to authors endpoint` });
-    });
+router.get('/', getAllAuthors);
     
-router.get('/:id', (req, res) => {
-    res
-        .status(200)
-        .json({ success: true, message: `${req.method} - Request received to authors endpoint` });
-        });
+router.get('/:id', getAuthorById);
 
-router.post('/', (req, res) => {
-    res
-        .status(200)
-        .json({ success: true, message: `${req.method} - Request received to authors endpoint` });
-        });
+router.post('/', createAuthor);
 
-router.put('/:id', (req, res) => {
-    res
-        .status(200)
-        .json({ success: true, message: `${req.method} - Request received to authors endpoint` });
-        });
+router.put('/:id', updateAuthor);
 
-router.delete('/:id', (req, res) => {
-    res
-        .status(200)
-        .json({ success: true, message: `${req.method} - Request received to authors endpoint` });
-        });
-        
+router.delete('/:id', deleteAuthor);
+
 
 
 module.exports = router;
